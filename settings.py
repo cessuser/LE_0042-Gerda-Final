@@ -52,9 +52,9 @@ USE_POINTS = True
 
 ROOMS = [
     {
-        'name': 'econ101',
-        'display_name': 'Econ 101 class',
-        'participant_label_file': '_rooms/econ101.txt',
+        'name': 'le0042',
+        'display_name': 'LE0042 for CESS Lab',
+        'participant_label_file': '_rooms/cess_lab.txt',
     },
     {
         'name': 'live_demo',
