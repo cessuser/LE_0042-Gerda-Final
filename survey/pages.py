@@ -25,6 +25,7 @@ class Demographics3(Page):
     def vars_for_template(self):
         return {'table': "survey/table.jpg"}
 
+
 class Demographics4(Page):
     form_model = models.Player
     form_fields = ['q18', 'q19', 'q20', 'q21', 'q22', 'q23', 'q24', 'q25', 'q26', 'q27']
