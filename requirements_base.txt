@@ -1,0 +1,4 @@
+otree>=2.1.13
+otree_tools>=0.0.10
+numpy>=1.15
+botocore>=1.12.49

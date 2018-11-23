@@ -1,0 +1,19 @@
+{% extends "global/Base.html" %}
+{% load otree static %}
+
+{% block title %}
+    Bonus Task
+{% endblock %}
+
+{% block content %}
+    <p>
+        <b> This is the Bonus Task.</b>
+    </p>
+    <p>
+    You are matched with a {{ match_group }} with  {{ player.match_income }} tokens in the last
+    period of Part 2 of the experiment.
+    </p>
+    {% formfield player.bonus_choice with label = "If the computer randomly selects this participant, which bonus should he or she receive?"%}
+    {% next_button %}
+
+{% endblock %}
