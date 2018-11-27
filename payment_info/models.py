@@ -33,6 +33,9 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    final_payoff = models.FloatField(min=0)
     def set_payoff(self, val):
-        self.payoff = c(int(0.004 * val)) + c(5)
+        self.payoff = 0.004 * val + 5
+        self.final_payoff = 0.004*val + 5
+        print("final pay: ", self.final_payoff)
 
