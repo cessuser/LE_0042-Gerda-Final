@@ -18,7 +18,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 12,
         # 'app_sequence': ['paint_task1', 'paint_task2', 'earning_task2', 'tax_transfer2'],
         'app_sequence': ['paint_task1', 'paint_task2', 'group_task', 'earning_task1','tax_transfer1','earning_task2', 'tax_transfer2',
-                         'earning_task3', 'tax_transfer3', 'earning_task4','bonus_task','survey','payment_info' ],
+                         'earning_task3', 'tax_transfer3', 'earning_task4','bonus_task','payment_info','survey' ],
         'use_browser_bots': False
     },
     {
@@ -32,6 +32,12 @@ SESSION_CONFIGS = [
         'display_name': "sample",
         'num_demo_participants': 12,
         'app_sequence': ['paint_task1', 'paint_task2', 'earning_task1', 'tax_transfer1'],
+    },
+    {
+        'name': 'sample1',
+        'display_name': "sample1",
+        'num_demo_participants': 12,
+        'app_sequence': ['paint_task1', 'paint_task2', 'earning_task1', 'tax_transfer2'],
     },
     {
         'name': 'survey',

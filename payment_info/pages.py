@@ -52,7 +52,7 @@ class PaymentInfo(Page):
             'p3_bonus': bonus,
             'chosen': chosen_msg,
             'p3_payoff1': p3_payoff1,
-            'real_pay': total_payoff * 0.004 + 5,
+            'real_pay': round(total_payoff * 0.004,2) + 5,
 
         }
 

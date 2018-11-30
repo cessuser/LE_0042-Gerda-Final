@@ -215,18 +215,17 @@ class Group(BaseGroup):
         for r in range(0,Constants.num_rounds):
             for p in self.get_players():
                 cur_decgroup = p.participant.vars['decgroup_period2'][r]
-                cur_rd = p.participant.vars['rd_period2'][r][cur_decgroup-1]
+                cur_rd = p.participant.vars['rd_period2'][r][cur_decgroup-1] #800,600,400,200
                 cur_dv = None
                 tokens = 0
                 cur_comp = p.participant.vars['competition_period2'][r]
-                if p.income2 == 400 and cur_comp == 1:
-                    tokens -= 40
                 if p.income2 == cur_rd:
                     cur_dv = p.participant.vars['dv_period2'][r]
-                    if cur_dv == 1:
-                        tokens = p.income2 - p.income2 * 0.2 + 100
-                    if cur_dv == 2:
-                        tokens = p.income2 - p.income2 * 0.4 + 200
+                    dv_pair = [[0.8, 100], [0.6, 200]][cur_dv - 1]
+                    if p.income2 == 400 and cur_comp == 1:
+                        tokens = (p.income2 - 40) * dv_pair[0] + dv_pair[1]
+                    else:
+                        tokens = p.income2 * dv_pair[0] + dv_pair[1]
                 else:
                     for q in p.get_others_in_subsession():
                         if cur_decgroup == q.participant.vars['decgroup_period2'][r]:

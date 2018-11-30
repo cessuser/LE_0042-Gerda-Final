@@ -215,20 +215,17 @@ class Group(BaseGroup):
                 cur_dv = None
                 tokens = 0
                 cur_comp = p.participant.vars['competition_period1'][r]
-                if p.income1 == cur_rd:
+                if p.income1 == cur_rd: # if p is the chosen person
                     cur_dv = p.participant.vars['dv_period1'][r]
+                    dv_pair = [[0.8,100], [0.6,200]][cur_dv-1]
                     if p.income1 == 400 and cur_comp == 1:
-                        p.income1 = 360
-                    if cur_dv == 1:
-                        tokens = p.income1 - p.income1 * 0.2 + 100
-                    if cur_dv == 2:
-                        tokens = p.income1 - p.income1 * 0.4 + 200
-                else:
+                        tokens = (p.income1 - 40) * dv_pair[0] + dv_pair[1]
+                    else:
+                        tokens = p.income1 * dv_pair[0] + dv_pair[1]
+                else: # if p is not the chosen person
                     for q in p.get_others_in_subsession():
                         if cur_decgroup == q.participant.vars['decgroup_period1'][r]:
                             if q.income1 == cur_rd:
-                                if q.income1 == 400 and cur_comp:
-                                    q.income1 = 360
                                 cur_dv = q.participant.vars['dv_period1'][r]
                                 if cur_dv == 1:
                                     tokens = p.income1 - p.income1 * 0.2 + 100
